@@ -1,17 +1,23 @@
+'use client'
 import Image from "next/image"
 import CodeIcon from "@/assets/images/code.svg"
 import EngFlag from "@/assets/images/eng-flag.svg"
+import { useRouter } from 'next/navigation'
 
 const Navbar = () => {
+    const route = useRouter()
     const MenuItems = [
         {
-            title: "Resume"
+            title: "Resume",
+            onclick: () => route.push('/resume')
         },
         {
-            title: "Projects"
+            title: "Projects",
+            onclick: () => route.push('/projects')
         },
         {
-            title: "About"
+            title: "About",
+            onclick: () => route.push('/about')
         },
     ]
     return (
@@ -20,9 +26,12 @@ const Navbar = () => {
                 <Image src={CodeIcon} height={30} /> <span className="font-bold text-[40px]">musyaffacm.me</span>
             </button>
             <div className="flex gap-x-20">
-                {MenuItems.map((item) => (
-                    <button className="font-semibold text-2xl place-self-center">
-                        {item.title}
+                {MenuItems.map(({ title, onclick }) => (
+                    <button
+                        className="font-semibold text-2xl place-self-center"
+                        onClick={() => onclick()}
+                    >
+                        {title}
                     </button>
                 ))}
                 <button className="w-10">
