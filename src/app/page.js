@@ -1,4 +1,5 @@
 import { Poppins, Passion_One } from 'next/font/google'
+import IntroductionSection from "./Sections/IntroductionSection";
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
@@ -15,6 +16,7 @@ const passion_one = Passion_One({
 export default function Home() {
   return (
     <main className={`${poppins.className} ${poppins.variable} ${passion_one.variable}`}>
+      <IntroductionSection />
     </main>
   );
 }
