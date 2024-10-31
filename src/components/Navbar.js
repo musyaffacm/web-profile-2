@@ -23,7 +23,7 @@ const Navbar = () => {
     return (
         <div className="flex justify-between px-[10%] pt-[5%] items-center">
             <button className="flex items-center gap-x-5">
-                <Image src={CodeIcon} height={30} /> <span className="font-bold text-[40px]">musyaffacm.me</span>
+                <Image src={CodeIcon} height={30} /> <span className="font-bold text-[40px] font-passion_one">musyaffacm.me</span>
             </button>
             <div className="flex gap-x-20">
                 {MenuItems.map(({ title, onclick }) => (
